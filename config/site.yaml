@@ -124,7 +124,7 @@ featuredSeries: []
 # -----------------------------------------------------------------------------
 social:
   github:
-    url: https://github.com/El-Requedaddy # GitHub
+    url: https://github.com/Carlos-Requena # GitHub
     icon: ri:github-fill # Remix Icon 的 GitHub 图标
     color: '#191717' # (可选) 图标颜色
   linkedin:
