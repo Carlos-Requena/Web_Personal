@@ -1,0 +1,67 @@
+---
+/**
+ * Key facts box at the top of a project page: summary, type, role, stack,
+ * development note and links.
+ */
+import { getAboutContent } from '@constants/about';
+import { Icon } from 'astro-icon/components';
+import type { BlogPost } from 'types/blog';
+import ProjectLinks from './ProjectLinks.astro';
+import StackChips from './StackChips.astro';
+
+interface Props {
+  post: BlogPost;
+  locale: string;
+  class?: string;
+}
+
+const { post, locale, class: className } = Astro.props;
+const { description, projectType, role, stack, links, noAi } = post.data;
+const { labels } = getAboutContent(locale);
+const { facts } = labels;
+---
+
+<aside class:list={['border-border bg-card/60 flex flex-col gap-4 rounded-xl border p-5', className]}>
+  <h2 class="text-muted-foreground text-xs font-semibold tracking-wider uppercase">{facts.title}</h2>
+  {description && <p class="text-pretty">{description}</p>}
+  <dl class="grid grid-cols-[8rem_minmax(0,1fr)] items-start gap-x-4 gap-y-2.5 text-sm md:grid-cols-1 md:gap-y-1">
+    {
+      projectType && (
+        <>
+          <dt class="text-muted-foreground">{facts.type}</dt>
+          <dd class="md:mb-2">{projectType}</dd>
+        </>
+      )
+    }
+    {
+      role && (
+        <>
+          <dt class="text-muted-foreground">{facts.role}</dt>
+          <dd class="md:mb-2">{role}</dd>
+        </>
+      )
+    }
+    {
+      stack?.length && (
+        <>
+          <dt class="text-muted-foreground">{facts.stack}</dt>
+          <dd class="md:mb-2">
+            <StackChips items={stack} />
+          </dd>
+        </>
+      )
+    }
+    {
+      noAi && (
+        <>
+          <dt class="text-muted-foreground">{facts.development}</dt>
+          <dd class="flex items-center gap-1.5 md:mb-2">
+            <Icon name="ri:shield-check-line" class="size-4 shrink-0 text-green-500" />
+            {facts.noAi}
+          </dd>
+        </>
+      )
+    }
+  </dl>
+  <ProjectLinks links={links} labels={labels} variant="buttons" />
+</aside>

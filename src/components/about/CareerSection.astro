@@ -1,0 +1,24 @@
+---
+/**
+ * Experience and education side by side.
+ */
+import { getAboutContent } from '@constants/about';
+import { getLocaleFromUrl } from '@/i18n';
+import Timeline from './Timeline.astro';
+
+interface Props {
+  heading?: string;
+}
+
+const locale = getLocaleFromUrl(Astro.url.pathname);
+const data = getAboutContent(locale);
+const { heading } = Astro.props;
+---
+
+<section class="flex flex-col gap-6" id="experience">
+  {heading && <h2 class="text-2xl font-bold">{heading}</h2>}
+  <div class="grid grid-cols-2 gap-10 md:grid-cols-1">
+    <Timeline title={data.labels.experience} icon="ri:briefcase-4-line" entries={data.experience} />
+    <Timeline title={data.labels.education} icon="ri:graduation-cap-fill" entries={data.education} />
+  </div>
+</section>

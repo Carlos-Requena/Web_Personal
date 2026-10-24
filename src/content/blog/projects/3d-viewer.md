@@ -6,17 +6,25 @@ date: 2026-02-24 00:00:00
 description: Motor de renderizado 3D desarrollado en C++ con OpenGL. Soporta carga de modelos con Assimp, iluminación Phong, normal mapping, texturas y una interfaz interactiva con ImGUI.
 cover: /img/cover/3.webp
 tags:
-  - C++
-  - OpenGL
-  - GLFW
-  - ImGUI
-  - Assimp
-  - GLSL
-  - GLM
-  - 3D Graphics
+  - "C++"
+  - "OpenGL"
+  - "Gráficos 3D"
 categories:
   - Proyectos
 sticky: false
+order: 2
+projectType: "Proyecto universitario"
+role: "Desarrollo individual, del diseño a la implementación"
+stack:
+  - "C++"
+  - "OpenGL"
+  - "GLSL"
+  - "Assimp"
+  - "ImGui"
+links:
+  code: https://github.com/Carlos-Requena/3D_Viewer
+  video: https://drive.google.com/file/d/1zrzqGFnW4ZPExZnvLs_mIXGnygYp2qX0/view?usp=sharing
+noAi: true
 ---
 
 Motor de renderizado 3D construido desde cero en C++ sobre OpenGL. Permite cargar modelos en múltiples formatos mediante Assimp, aplicar distintos tipos de iluminación y materiales, renderizar con normal mapping y controlar la cámara de forma interactiva. Toda la configuración de la escena se gestiona en tiempo real a través de una interfaz con ImGUI.
@@ -49,7 +57,7 @@ Motor de renderizado 3D construido desde cero en C++ sobre OpenGL. Permite carga
 
 El diseño sigue un esquema orientado a objetos con responsabilidades bien delimitadas. El diagrama de clases resume las relaciones principales:
 
-```
+```plain
 Renderer  ◆── ShaderHandler   (composición: Renderer crea y posee ShaderHandler)
 Renderer  ◆── Cámara
 Renderer  ──▶ Luz (N luces en vector)
@@ -162,9 +170,9 @@ void PAG::GestorModelos::creaModelo(const char* path, glm::mat4 matrizModelado,
 
 ## 🔗 Repositorio
 
-- **GitHub**: [El-Requedaddy/3D_Viewer](https://github.com/El-Requedaddy/3D_Viewer)
-- **Main (ImGUI + input)**: [`program/main.cpp`](https://github.com/El-Requedaddy/3D_Viewer/blob/master/program/main.cpp)
-- **Renderer (normal mapping, L180)**: [`program/Renderer.cpp`](https://github.com/El-Requedaddy/3D_Viewer/blob/master/program/Renderer.cpp)
+- **GitHub**: [Carlos-Requena/3D_Viewer](https://github.com/Carlos-Requena/3D_Viewer)
+- **Main (ImGUI + input)**: [`program/main.cpp`](https://github.com/Carlos-Requena/3D_Viewer/blob/master/program/main.cpp)
+- **Renderer (normal mapping, L180)**: [`program/Renderer.cpp`](https://github.com/Carlos-Requena/3D_Viewer/blob/master/program/Renderer.cpp)
 
 ## 🎓 Aprendizajes Clave
 

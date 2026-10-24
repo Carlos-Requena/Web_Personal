@@ -40,12 +40,13 @@ export const uiStrings = {
   'post.featuredCategories': 'Categorías destacadas',
   'post.yearPosts': '{count} artículos',
   'post.readingTime': '{time} min de lectura',
+  'post.readingMinutes': '{time} min',
   'post.wordCount': '{count} palabras',
   'post.publishedAt': 'Publicado el {date}',
   'post.updatedAt': 'Actualizado el {date}',
   'post.prevPost': 'Anterior',
   'post.nextPost': 'Siguiente',
-  'post.relatedPosts': 'Artículos relacionados',
+  'post.relatedPosts': 'Proyectos relacionados',
   'post.seriesNavigation': 'Navegación de series',
   'post.seriesPrev': 'Anterior',
   'post.seriesNext': 'Siguiente',
@@ -140,6 +141,7 @@ export const uiStrings = {
 
   // ── Footer ──────────────────────────────────────────────────
   'footer.poweredBy': 'Desarrollado con {name}',
+  'footer.theme': 'Tema',
   'footer.totalPosts': '{count} artículos',
   'footer.totalWords': '{count} palabras',
   'footer.totalWordsTitle': 'Total de palabras',
@@ -255,7 +257,7 @@ export const uiStrings = {
   'summary.auto': 'Resumen',
 
   // ── Random Posts ────────────────────────────────────────────
-  'post.randomPosts': 'Artículos aleatorios',
+  'post.randomPosts': 'Otros proyectos',
 
   // ── Tag Component ───────────────────────────────────────────
   'tag.expandAll': 'Mostrar todo',

@@ -6,19 +6,28 @@ date: 2026-07-31 00:00:00
 description: "Trabajo Fin de Grado: un módulo de Inteligencia Artificial Explicable (XAI) integrado en la plataforma Nets4Learning, que genera explicaciones visuales de modelos de Deep Learning ejecutándose íntegramente en el navegador con TensorFlow.js (SHAP y LRP)."
 cover: /img/projects/tfg-simidat.webp
 tags:
-  - TFG
-  - Inteligencia Artificial
-  - XAI
-  - Deep Learning
-  - React
-  - TensorFlow.js
-  - JavaScript
-  - SHAP
-  - LRP
-  - Proyecto Universitario
+  - "TFG"
+  - "Inteligencia Artificial"
+  - "Deep Learning"
+  - "React"
+  - "TensorFlow.js"
 categories:
   - Proyectos
 sticky: true
+order: 1
+projectType: "Trabajo Fin de Grado"
+role: "Autor: requisitos, algoritmos XAI e interfaz"
+stack:
+  - "React"
+  - "TypeScript"
+  - "TensorFlow.js"
+  - "SHAP"
+  - "LRP"
+links:
+  demo: https://nets4learnings.netlify.app
+  code: https://github.com/Carlos-Requena/TFG-Explicabilidad-NEts4Learning
+  pdf: /tfg/Carlos_Requena_TFG.pdf
+noAi: true
 ---
 
 Trabajo Fin de Grado del **Grado en Ingeniería Informática** de la **Universidad de Jaén**, desarrollado en el contexto del grupo de investigación **SIMIDAT** bajo la dirección de **Antonio Jesús Rivera Rivas** y **María Dolores Pérez Godoy**.

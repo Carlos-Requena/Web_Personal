@@ -6,15 +6,18 @@ date: 2026-02-25
 description: Un videojuego tipo Speedrun desarrollado en Unity donde el objetivo es completar niveles lo más rápido posible con mecánicas avanzadas de movimiento.
 cover: /img/cover/5.webp
 tags:
-  - Unity
-  - C#
-  - Game Development
-  - Speedrun
-  - 3D
-  - Proyecto Universitario
+  - "Unity"
+  - "C#"
+  - "Videojuegos"
 categories:
   - Proyectos
 sticky: false
+order: 4
+projectType: "Proyecto universitario"
+stack:
+  - "Unity"
+  - "C#"
+noAi: true
 ---
 
 **The Speedrunner** es un videojuego de plataformas en primera persona desarrollado en Unity, enfocado en la velocidad y la precisión. El objetivo principal es completar niveles en el menor tiempo posible, superando récords personales y compitiendo contra otros jugadores.

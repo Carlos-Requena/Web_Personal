@@ -9,6 +9,8 @@ interface Props {
   post?: BlogPost;
   /** Override canonical URL (e.g., for fallback pages pointing to default-locale version) */
   canonical?: string;
+  /** Pages without a cover banner: keep the header background visible at the top */
+  solidHeader?: boolean;
 }
 
 import { ClientRouter } from 'astro:transitions';
@@ -48,6 +50,7 @@ const {
   siderType,
   post,
   canonical: canonicalOverride,
+  solidHeader = false,
 } = Astro.props;
 // TODO: siderType should be custom in router file, not in layout
 
@@ -84,21 +87,6 @@ const canonicalHref = canonicalOverride ?? Astro.url.href;
     <!-- Preconnect to third-party origins for faster resource loading -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-    <link rel="preconnect" href="https://chinese-font.netlify.app" crossorigin />
-    <link rel="dns-prefetch" href="https://chinese-font.netlify.app" />
-
-    {/* Async load rounded fonts — Japanese pages use Gen Jyuu Gothic P, others use ChillRoundF (fix #113) */}
-    {locale === 'ja' ? (
-      <>
-        <link rel="stylesheet" href="/fonts/GenJyuuGothic-P-Regular/result.css" media="print" onload="this.setAttribute('media','all')" />
-        <link rel="stylesheet" href="/fonts/GenJyuuGothic-P-Bold/result.css" media="print" onload="this.setAttribute('media','all')" />
-      </>
-    ) : (
-      <>
-        <link rel="stylesheet" href="/fonts/ChillRoundFRegular/result.css" media="print" onload="this.setAttribute('media','all')" />
-        <link rel="stylesheet" href="/fonts/ChillRoundFBold/result.css" media="print" onload="this.setAttribute('media','all')" />
-      </>
-    )}
 
     <ClientRouter />
     <LoadingIndicator color="#e9536a" />
@@ -343,7 +331,7 @@ const canonicalHref = canonicalOverride ?? Astro.url.href;
   <body>
     <ChristmasEffects transition:persist="christmas-snowfall" />
     <div class="flex min-h-screen flex-col text-black dark:text-white">
-      <Header isPostPage={isPostPage} tocNumbering={post?.data.tocNumbering ?? true} />
+      <Header isPostPage={isPostPage} tocNumbering={post?.data.tocNumbering ?? true} solid={solidHeader} />
       <main class="relative flex grow flex-col gap-4">
         {(<slot />)}
       </main>

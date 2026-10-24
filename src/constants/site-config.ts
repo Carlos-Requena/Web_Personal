@@ -211,16 +211,18 @@ export const siteConfig: SiteConfig = {
 
 export const socialConfig: SocialConfig = yamlConfig.social ?? {};
 
-const { title, alternate, subtitle } = siteConfig;
+const { title, subtitle } = siteConfig;
 
 export const seoConfig = {
-  title: `${alternate ? `${alternate} = ` : ''}${title}${subtitle ? ` = ${subtitle}` : ''}`,
+  title: `${title}${subtitle ? ` · ${subtitle}` : ''}`,
   description: siteConfig.description,
   keywords: siteConfig?.keywords?.join(',') ?? '',
   url: siteConfig.site,
 };
 
-export const defaultCoverList = Array.from({ length: 21 }, (_, index) => index + 1).map((item) => withBase(`/img/cover/${item}.webp`));
+export const defaultCoverList = Array.from({ length: 21 }, (_, index) => index + 1).map((item) =>
+  withBase(`/img/cover/${item}.webp`),
+);
 
 // Analytics config types
 type AnalyticsConfig = {

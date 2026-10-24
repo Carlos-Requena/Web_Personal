@@ -6,17 +6,25 @@ date: 2026-02-24 00:00:00
 description: C++とOpenGLでゼロから開発された3Dレンダリングエンジン。Assimpによるモデル読み込み、Phong照明、法線マッピング、テクスチャ、ImGUIによるインタラクティブなインターフェースをサポートしています。
 cover: /img/cover/3.webp
 tags:
-  - C++
-  - OpenGL
-  - GLFW
-  - ImGUI
-  - Assimp
-  - GLSL
-  - GLM
-  - 3D Graphics
+  - "C++"
+  - "OpenGL"
+  - "3Dグラフィックス"
 categories:
   - プロジェクト
 sticky: false
+order: 2
+projectType: "大学のプロジェクト"
+role: "設計から実装まで単独で担当"
+stack:
+  - "C++"
+  - "OpenGL"
+  - "GLSL"
+  - "Assimp"
+  - "ImGui"
+links:
+  code: https://github.com/Carlos-Requena/3D_Viewer
+  video: https://drive.google.com/file/d/1zrzqGFnW4ZPExZnvLs_mIXGnygYp2qX0/view?usp=sharing
+noAi: true
 ---
 
 C++とOpenGLを使用してゼロから構築された3Dレンダリングエンジンです。Assimpを使用して複数のフォーマットでモデルを読み込み、異なる種類の照明やマテリアルを適用し、法線マッピングでレンダリングし、インタラクティブにカメラを制御できます。シーン全体の構成はImGUIインターフェースを通じてリアルタイムで管理されます。
@@ -28,12 +36,12 @@ C++とOpenGLを使用してゼロから構築された3Dレンダリングエン
 ## 🚀 主な機能
 
 - **モデル読み込み**: Assimpライブラリによる複数フォーマットのサポート
-- **Phong照明**: 設定可能な点光源と指向性光源
+- **Phong 照明**: 設定可能な点光源と指向性光源
 - **法線マッピング**: 追加のジオメトリなしで表面の詳細を表現
 - **レンダリングモード**: 塗りつぶし、ワイヤーフレーム、法線マッピング付き塗りつぶし
 - **テクスチャ/マテリアルレンダリング**: リアルタイムで切り替え可能
 - **インタラクティブインターフェース**: ImGUIを使用したドロップダウンメニュー
-- **フリーカメラ**: WASD移動 + マウス視点操作、パン、ピッチ制御
+- **フリーカメラ**: WASD 移動 + マウス視点操作、パン、ピッチ制御
 
 ## 🛠️ 技術スタック
 
@@ -49,7 +57,7 @@ C++とOpenGLを使用してゼロから構築された3Dレンダリングエン
 
 設計は、責任範囲が明確に定義されたオブジェクト指向スキーマに従っています。クラス図は主な関係を要約しています：
 
-```
+```plain
 Renderer  ◆── ShaderHandler   (コンポジション: RendererがShaderHandlerを作成・所有)
 Renderer  ◆── Camera
 Renderer  ──▶ Light (ベクトル内のN個のライト)
@@ -80,7 +88,7 @@ FileLoader  · · ▶  Renderer   (ファイル読み込み時に一時的に使
 | クラス | 役割 |
 |---|---|
 | **ModelManager** | `Model`へのポインタのベクトルを保持し、テクスチャIDを割り当て、レンダリングを委譲します |
-| **Model** | Assimp経由でモデルを読み込み、メッシュ、モデル行列、テクスチャ、シェーダーIDを格納します |
+| **Model** | Assimp 経由でモデルを読み込み、メッシュ、モデル行列、テクスチャ、シェーダーIDを格納します |
 | **ModelMesh** | GPUデータを含みます：VAO, VBO, EBOおよび各メッシュの頂点/インデックス |
 
 ### Light
@@ -162,16 +170,16 @@ void PAG::GestorModelos::creaModelo(const char* path, glm::mat4 modelMatrix,
 
 ## 🔗 リポジトリ
 
-- **GitHub**: [El-Requedaddy/3D_Viewer](https://github.com/El-Requedaddy/3D_Viewer)
-- **Main (ImGUI + input)**: [`program/main.cpp`](https://github.com/El-Requedaddy/3D_Viewer/blob/master/program/main.cpp)
-- **Renderer (法線マッピング, L180)**: [`program/Renderer.cpp`](https://github.com/El-Requedaddy/3D_Viewer/blob/master/program/Renderer.cpp)
+- **GitHub**: [Carlos-Requena/3D_Viewer](https://github.com/Carlos-Requena/3D_Viewer)
+- **Main (ImGUI + input)**: [`program/main.cpp`](https://github.com/Carlos-Requena/3D_Viewer/blob/master/program/main.cpp)
+- **Renderer (法線マッピング, L180)**: [`program/Renderer.cpp`](https://github.com/Carlos-Requena/3D_Viewer/blob/master/program/Renderer.cpp)
 
 ## 🎓 主な学び
 
 このプロジェクトを通じて以下のことを学びました：
 - 完全なOpenGLグラフィックスパイプラインの理解（VAO/VBO/EBO、シェーダーコンパイル、ドローコール）
-- GLSLでのマルチライトサポート付きPhong照明システムの実装
+- GLSLでのマルチライトサポート付きPhong 照明システムの実装
 - 接空間での**法線マッピング**のゼロからの実装
-- 追加フレームワークなしでOpenGL上に**ImGUI**を統合し、インタラクティブなインターフェースを構築
+- 追加フレームワークなしでOpenGL 上に**ImGUI**を統合し、インタラクティブなインターフェースを構築
 - C++でのコンポジションとシングルトンパターンを使用したオブジェクト指向アーキテクチャの設計
 - IDと簡略化されたオブジェクトプールシステムを使用したGPUリソース（テクスチャ、バッファ）の管理

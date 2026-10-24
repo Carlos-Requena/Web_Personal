@@ -4,18 +4,21 @@ link: tsp-evolutionary-optimization
 catalog: true
 date: 2026-02-25
 description: Implementation and analysis of Genetic and Differential Evolution algorithms for the Traveling Salesperson Problem (TSP), comparing OX2 and MOC crossover operators.
-cover: /img/cover/6.webp
+cover: /img/cover/7.webp
 tags:
-  - C++
-  - Artificial Intelligence
-  - Genetic Algorithms
-  - Optimization
-  - Metaheuristics
-  - TSP
-  - University Project
+  - "C++"
+  - "Metaheuristics"
+  - "Optimization"
 categories:
   - Projects
 sticky: false
+order: 5
+projectType: "Metaheuristics course"
+stack:
+  - "C++"
+  - "Genetic algorithms"
+  - "Differential evolution"
+noAi: true
 ---
 
 This project documents the implementation and experimental analysis of metaheuristic algorithms to solve the **Traveling Salesperson Problem (TSP)**. It was developed by **Carlos Requena Doña** and **Yessin Mohamed** as part of a university practice.

@@ -168,7 +168,7 @@ if (contentConfig.enableCodeMeta !== false) shikiTransformers.push(shokaMetaTran
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://el-requedaddy.github.io',
+  site: 'https://carlos-requena.github.io',
   base: '/Web_Personal',
   compressHTML: true,
   markdown: {

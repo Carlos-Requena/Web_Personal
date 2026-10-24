@@ -6,19 +6,28 @@ date: 2026-07-31 00:00:00
 description: "Bachelor's thesis: an Explainable AI (XAI) module integrated into the Nets4Learning platform that produces visual explanations of Deep Learning models running entirely in the browser with TensorFlow.js (SHAP and LRP)."
 cover: /img/projects/tfg-simidat.webp
 tags:
-  - Bachelor's Thesis
-  - Artificial Intelligence
-  - XAI
-  - Deep Learning
-  - React
-  - TensorFlow.js
-  - JavaScript
-  - SHAP
-  - LRP
-  - University Project
+  - "Bachelor's Thesis"
+  - "Artificial Intelligence"
+  - "Deep Learning"
+  - "React"
+  - "TensorFlow.js"
 categories:
   - Projects
 sticky: true
+order: 1
+projectType: "Bachelor's thesis"
+role: "Author: requirements, XAI algorithms and UI"
+stack:
+  - "React"
+  - "TypeScript"
+  - "TensorFlow.js"
+  - "SHAP"
+  - "LRP"
+links:
+  demo: https://nets4learnings.netlify.app
+  code: https://github.com/Carlos-Requena/TFG-Explicabilidad-NEts4Learning
+  pdf: /tfg/Carlos_Requena_TFG.pdf
+noAi: true
 ---
 
 Bachelor's thesis for the **Computer Engineering degree** at the **University of Jaén**, developed within the **SIMIDAT** research group under the supervision of **Antonio Jesús Rivera Rivas** and **María Dolores Pérez Godoy**.

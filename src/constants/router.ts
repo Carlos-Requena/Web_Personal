@@ -20,6 +20,7 @@ export enum Routes {
 export const RESERVED_ROUTES = new Set([
   // Static pages
   'about',
+  'projects',
   'categories',
   'tags',
   'post',

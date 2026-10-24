@@ -2,11 +2,12 @@
 import CustomContent from '@components/common/CustomContent.astro';
 import HomeSider from '@components/layout/HomeSider.astro';
 import SummaryPanel, { type SummarySource } from '@components/post/SummaryPanel';
+import ProjectFacts from '@components/projects/ProjectFacts.astro';
 import Cover from '@components/ui/cover/Cover.astro';
 import { defaultContentConfig } from '@constants/content-config';
 import { HomeSiderType } from '@constants/enum';
 import { CONTENT_PADDING } from '@constants/layout';
-import { siteConfig } from '@constants/site-config';
+import { siteConfig, withBase } from '@constants/site-config';
 import Layout from '@layouts/Layout.astro';
 import TwoColumnLayout from '@layouts/TwoColumnLayout.astro';
 import {
@@ -149,7 +150,7 @@ if (post.data.description) {
 >
   <script is:inline slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <script is:inline slot="head" type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
-  {hasMath && <link slot="head" rel="stylesheet" href="/katex/katex.min.css" />}
+  {hasMath && <link slot="head" rel="stylesheet" href={withBase('/katex/katex.min.css')} />}
   <TwoColumnLayout post={post}>
     <Cover slot="cover" data={post} />
     <HomeSider slot="sider" type={HomeSiderType.POST} post={post} />
@@ -189,8 +190,12 @@ if (post.data.description) {
         </div>
       )}
       {
-        !post.data.password && summaryText && summarySource && (
-          <SummaryPanel client:visible summary={summaryText} source={summarySource} className="mt-2" />
+        post.data.projectType ? (
+          <ProjectFacts post={post} locale={locale} class="mt-2" />
+        ) : (
+          !post.data.password &&
+          summaryText &&
+          summarySource && <SummaryPanel client:visible summary={summaryText} source={summarySource} className="mt-2" />
         )
       }
       <article class="prose md:prose-sm dark:prose-invert">

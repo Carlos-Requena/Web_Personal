@@ -26,6 +26,28 @@ export interface BlogSchema {
   quiz?: boolean;
   /** Password for encrypting the entire post content */
   password?: string;
+  /** Portfolio: display order in project listings (lower first) */
+  order?: number;
+  /** Portfolio: short project type label, e.g. "Trabajo Fin de Grado" */
+  projectType?: string;
+  /** Portfolio: the author's role in the project */
+  role?: string;
+  /** Portfolio: main technologies, shown as chips */
+  stack?: string[];
+  /** Portfolio: external links (demo, code, video, PDF) */
+  links?: ProjectLinks;
+  /** Portfolio: code written without AI assistants */
+  noAi?: boolean;
+}
+
+/**
+ * External links of a portfolio project
+ */
+export interface ProjectLinks {
+  demo?: string;
+  code?: string;
+  video?: string;
+  pdf?: string;
 }
 
 /**

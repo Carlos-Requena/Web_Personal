@@ -4,22 +4,25 @@ link: plant-flow-optimization
 catalog: true
 date: 2026-02-25
 description: 組立ラインにおける二次割当問題（QAP）を解決するための、貪欲法、局所探索、タブー探索、およびマルチスタートアルゴリズムの実装と分析。
-cover: /img/cover/7.webp
+cover: /img/cover/6.webp
 tags:
-  - C++
-  - Artificial Intelligence
-  - Optimization
-  - Metaheuristics
-  - Greedy Algorithm
-  - Tabu Search
-  - QAP
-  - University Project
+  - "C++"
+  - "メタヒューリスティクス"
+  - "最適化"
 categories:
   - プロジェクト
 sticky: false
+order: 6
+projectType: "大学のプロジェクト"
+stack:
+  - "C++"
+  - "貪欲法"
+  - "局所探索"
+  - "タブーサーチ"
+noAi: true
 ---
 
-このプロジェクトは、工場の組立ラインの最適化問題（FORDのケーススタディに基づく）に取り組み、資材フローのコストを最小限に抑えるための部門の最適な配置を追求します。メタヒューリティクスコースの実習1の一部として、**Carlos Requena Doña** と **Yessin Mohamed** によって開発されました。
+このプロジェクトは、工場の組立ラインの最適化問題（FORDのケーススタディに基づく）に取り組み、資材フローのコストを最小限に抑えるための部門の最適な配置を追求します。メタヒューリティクスコースの実習 1の一部として、**Carlos Requena Doña** と **Yessin Mohamed** によって開発されました。
 
 構築的ヒューリスティクスから高度な局所探索メタヒューリスティクスまで、さまざまな最適化手法が実装され、比較されています。
 

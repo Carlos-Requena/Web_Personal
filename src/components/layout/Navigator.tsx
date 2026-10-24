@@ -11,6 +11,7 @@ import { configuredSeriesSlugs, enabledSeriesSlugs } from '@constants/site-confi
 import { useIsTablet } from '@hooks/useMediaQuery';
 import { useScrollTrigger } from '@hooks/useScrollTrigger';
 import { Icon } from '@iconify/react';
+import { getActiveNavPath } from '@lib/route';
 import { cn, filterNavItems } from '@lib/utils';
 import { memo, useEffect, useRef } from 'react';
 import { defaultLocale, localizedPath, resolveNavName, stripLocaleFromPath } from '@/i18n';
@@ -21,6 +22,8 @@ import { SearchTrigger } from './SearchDialog';
 interface NavigatorProps {
   currentPath: string;
   locale?: string;
+  /** Keep the header background visible at the top (pages without a cover) */
+  solid?: boolean;
 }
 
 // Pre-filter navigation items at module load (config is static)
@@ -56,7 +59,7 @@ function ButtonLink({ url, label, isActive, children }: ButtonLinkProps) {
   );
 }
 
-const Navigator = memo(function Navigator({ currentPath, locale = defaultLocale }: NavigatorProps) {
+const Navigator = memo(function Navigator({ currentPath, locale = defaultLocale, solid = false }: NavigatorProps) {
   const { isBeyond, direction, scrollY } = useScrollTrigger({
     triggerDistance: 0.45,
     throttleMs: 80,
@@ -64,6 +67,7 @@ const Navigator = memo(function Navigator({ currentPath, locale = defaultLocale 
 
   const isTablet = useIsTablet();
   const strippedPath = stripLocaleFromPath(currentPath);
+  const activeNavPath = getActiveNavPath(strippedPath);
   const isPostPageMobile = isTablet && strippedPath.startsWith('/post/');
 
   const scrollEndTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -72,8 +76,8 @@ const Navigator = memo(function Navigator({ currentPath, locale = defaultLocale 
 
   // Apply with-background class based on scroll position
   useEffect(() => {
-    document.getElementById('site-header')?.classList.toggle('with-background', isBeyond);
-  }, [isBeyond]);
+    document.getElementById('site-header')?.classList.toggle('with-background', solid || isBeyond);
+  }, [solid, isBeyond]);
 
   // Handle header visibility based on scroll
   useEffect(() => {
@@ -144,7 +148,7 @@ const Navigator = memo(function Navigator({ currentPath, locale = defaultLocale 
           if (!item.path || !displayName) return null;
           const localizedUrl = localizedPath(item.path, locale);
           return (
-            <ButtonLink key={item.path} url={localizedUrl} label={displayName} isActive={item.path === strippedPath}>
+            <ButtonLink key={item.path} url={localizedUrl} label={displayName} isActive={item.path === activeNavPath}>
               {item.icon && <NavIcon name={item.icon} />}
               {displayName}
             </ButtonLink>

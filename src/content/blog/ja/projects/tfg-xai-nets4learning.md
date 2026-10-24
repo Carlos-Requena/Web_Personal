@@ -6,19 +6,28 @@ date: 2026-07-31 00:00:00
 description: "卒業研究：教育プラットフォーム Nets4Learning に統合した説明可能なAI（XAI）モジュール。TensorFlow.js を用いてブラウザ内で完結し、ディープラーニングモデルの予測を視覚的に説明します（SHAP と LRP）。"
 cover: /img/projects/tfg-simidat.webp
 tags:
-  - Bachelor's Thesis
-  - Artificial Intelligence
-  - XAI
-  - Deep Learning
-  - React
-  - TensorFlow.js
-  - JavaScript
-  - SHAP
-  - LRP
-  - University Project
+  - "卒業研究"
+  - "人工知能"
+  - "ディープラーニング"
+  - "React"
+  - "TensorFlow.js"
 categories:
   - プロジェクト
 sticky: true
+order: 1
+projectType: "卒業研究（TFG）"
+role: "要件定義・XAIアルゴリズム・UI実装を一貫して担当"
+stack:
+  - "React"
+  - "TypeScript"
+  - "TensorFlow.js"
+  - "SHAP"
+  - "LRP"
+links:
+  demo: https://nets4learnings.netlify.app
+  code: https://github.com/Carlos-Requena/TFG-Explicabilidad-NEts4Learning
+  pdf: /tfg/Carlos_Requena_TFG.pdf
+noAi: true
 ---
 
 **ハエン大学**の**情報工学（Ingeniería Informática）**の卒業研究です。研究グループ **SIMIDAT** にて、**Antonio Jesús Rivera Rivas** 先生と **María Dolores Pérez Godoy** 先生のご指導のもとで開発しました。

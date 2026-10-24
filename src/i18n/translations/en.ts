@@ -41,12 +41,13 @@ export const uiStrings: UIStrings = {
   'post.featuredCategories': 'Featured Categories',
   'post.yearPosts': '{count} posts',
   'post.readingTime': '{time} min read',
+  'post.readingMinutes': '{time} min',
   'post.wordCount': '{count} words',
   'post.publishedAt': 'Published {date}',
   'post.updatedAt': 'Updated {date}',
   'post.prevPost': 'Previous',
   'post.nextPost': 'Next',
-  'post.relatedPosts': 'Related Posts',
+  'post.relatedPosts': 'Related projects',
   'post.seriesNavigation': 'Series Navigation',
   'post.seriesPrev': 'Previous',
   'post.seriesNext': 'Next',
@@ -141,6 +142,7 @@ export const uiStrings: UIStrings = {
 
   // ── Footer ──────────────────────────────────────────────────
   'footer.poweredBy': 'Powered by {name}',
+  'footer.theme': 'Theme',
   'footer.totalPosts': '{count} posts',
   'footer.totalWords': '{count} words',
   'footer.totalWordsTitle': 'Total words',
@@ -256,7 +258,7 @@ export const uiStrings: UIStrings = {
   'summary.auto': 'Summary',
 
   // ── Random Posts ────────────────────────────────────────────
-  'post.randomPosts': 'Random Posts',
+  'post.randomPosts': 'Other projects',
 
   // ── Tag Component ───────────────────────────────────────────
   'tag.expandAll': 'Show all',

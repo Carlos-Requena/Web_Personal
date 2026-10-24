@@ -1,0 +1,50 @@
+---
+import type { AboutLabels } from '@constants/about';
+import { withBase } from '@constants/site-config';
+import { getProjectHref } from '@lib/content';
+import type { BlogPost } from 'types/blog';
+import ProjectLinks from './ProjectLinks.astro';
+import StackChips from './StackChips.astro';
+
+interface Props {
+  post: BlogPost;
+  locale: string;
+  labels: AboutLabels;
+}
+
+const { post, locale, labels } = Astro.props;
+const { title, description, cover, projectType, stack, links } = post.data;
+const href = getProjectHref(post, locale);
+---
+
+<article
+  class="group border-border bg-card flex flex-col overflow-hidden rounded-2xl border transition-shadow duration-300 hover:shadow-lg"
+>
+  <a href={href} class="block aspect-video overflow-hidden bg-white" aria-label={title} tabindex="-1">
+    {
+      cover && (
+        <img
+          src={withBase(cover)}
+          alt=""
+          loading="lazy"
+          decoding="async"
+          class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+      )
+    }
+  </a>
+  <div class="flex grow flex-col gap-2 p-5">
+    {projectType && <p class="text-primary text-xs font-semibold tracking-wider uppercase">{projectType}</p>}
+    <h3 class="text-lg leading-snug font-bold">
+      <a href={href} class="hover:text-primary transition-colors duration-200">{title}</a>
+    </h3>
+    {description && <p class="text-muted-foreground line-clamp-3 text-sm">{description}</p>}
+    <StackChips items={stack} class="mt-1" />
+    <div class="mt-auto flex flex-wrap items-center gap-x-4 gap-y-1 pt-3">
+      <ProjectLinks links={links} labels={labels} />
+      <a href={href} class="text-foreground hover:text-primary text-sm font-medium transition-colors duration-200">
+        {labels.viewProject} →
+      </a>
+    </div>
+  </div>
+</article>

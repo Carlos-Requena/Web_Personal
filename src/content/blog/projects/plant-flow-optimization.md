@@ -4,19 +4,22 @@ link: plant-flow-optimization
 catalog: true
 date: 2026-02-25
 description: Implementación y análisis de algoritmos Greedy, Búsqueda Local, Búsqueda Tabú y Multiarranque para resolver el problema de asignación cuadrática (QAP) en una cadena de montaje.
-cover: /img/cover/7.webp
+cover: /img/cover/6.webp
 tags:
-  - C++
-  - Inteligencia Artificial
-  - Optimización
-  - Metaheurísticas
-  - Algoritmo Greedy
-  - Búsqueda Tabú
-  - QAP
-  - Proyecto Universitario
+  - "C++"
+  - "Metaheurísticas"
+  - "Optimización"
 categories:
   - Proyectos
 sticky: false
+order: 6
+projectType: "Proyecto universitario"
+stack:
+  - "C++"
+  - "Greedy"
+  - "Búsqueda local"
+  - "Búsqueda tabú"
+noAi: true
 ---
 
 Este proyecto aborda el problema de optimización de una cadena de montaje para una fábrica (basado en un caso de estudio de FORD), buscando la distribución óptima de departamentos para minimizar el coste de flujo de materiales. Desarrollado por **Carlos Requena Doña** y **Yessin Mohamed** como parte de la Práctica 1 de la asignatura de Metaheurísticas.

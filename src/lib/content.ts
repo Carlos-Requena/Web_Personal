@@ -62,6 +62,11 @@ export {
 } from './content/posts';
 
 // =============================================================================
+// Project Utilities
+// =============================================================================
+export { getProjectHref, getProjects, splitFeatured } from './content/projects';
+
+// =============================================================================
 // Tag Utilities
 // =============================================================================
 export { buildTagPath, getAllTags, normalizeTag, tagToSlug } from './content/tags';

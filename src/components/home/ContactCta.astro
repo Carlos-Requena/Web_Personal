@@ -1,0 +1,16 @@
+---
+import ContactLinks from '@components/about/ContactLinks.astro';
+import { fillLabel, getAboutContent } from '@constants/about';
+import { socialConfig } from '@constants/site-config';
+import { getLocaleFromUrl } from '@/i18n';
+
+const locale = getLocaleFromUrl(Astro.url.pathname);
+const data = getAboutContent(locale);
+const email = socialConfig.email?.url.replace('mailto:', '') ?? '';
+---
+
+<section class="border-border bg-card flex flex-col items-center gap-4 rounded-2xl border p-8 text-center md:p-6" id="contact">
+  <h2 class="text-2xl font-bold">{data.labels.contactTitle}</h2>
+  <p class="text-muted-foreground max-w-xl text-pretty">{fillLabel(data.labels.contactText, { email })}</p>
+  <ContactLinks class="justify-center" />
+</section>

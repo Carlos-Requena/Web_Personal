@@ -1,0 +1,121 @@
+import { NAME, SENDAI_IMG, STACK } from './shared';
+import type { AboutContent } from './types';
+
+export const es: AboutContent = {
+  title: 'Sobre Mí',
+  coverTitle: 'Sobre Mí',
+  name: NAME,
+  jobTitle: 'Ingeniero Informático',
+  kicker: 'Ingeniero Informático · Universidad de Jaén, 2026',
+  role: 'Inteligencia artificial, gráficos 3D y videojuegos',
+  tagline:
+    'Desarrollo en C++, Unity y OpenGL, y en mi Trabajo Fin de Grado llevé la IA explicable al navegador con React y TensorFlow.js.',
+  badges: {
+    availability: 'Disponible para incorporación inmediata',
+    languages: 'Español · Inglés C1 · Japonés avanzado',
+    location: 'Estepona (Málaga)',
+  },
+  stack: STACK,
+  labels: {
+    skills: 'Habilidades',
+    education: 'Formación',
+    experience: 'Experiencia',
+    career: 'Experiencia y formación',
+    contact: 'Contacto',
+    downloadCv: 'Descargar CV',
+    viewProjects: 'Ver proyectos',
+    aboutMe: 'Sobre mí',
+    projects: 'Proyectos',
+    allProjects: 'Ver los {count} proyectos',
+    featured: 'Trabajo Fin de Grado',
+    demo: 'Demo en vivo',
+    code: 'Código',
+    video: 'Vídeo',
+    pdf: 'Memoria (PDF)',
+    viewProject: 'Ver proyecto',
+    noAiNote: 'Todos son proyectos de la carrera, programados por mí sin asistentes de IA.',
+    contactTitle: '¿Hablamos?',
+    contactText: 'Escríbeme a {email} o encuéntrame en LinkedIn y GitHub.',
+    facts: {
+      title: 'Ficha del proyecto',
+      type: 'Tipo',
+      role: 'Mi papel',
+      stack: 'Tecnologías',
+      links: 'Enlaces',
+      development: 'Desarrollo',
+      noAi: 'Código propio, sin asistentes de IA',
+    },
+  },
+  cvHref: '/cv/Carlos_Requena_CV.pdf',
+  cvFileName: 'Carlos_Requena_CV.pdf',
+  narrative: [
+    {
+      type: 'p',
+      text: 'Soy un desarrollador de software apasionado por la creación de videojuegos y motores gráficos. Me especializo en C++, Unity y OpenGL.',
+    },
+    { type: 'p', text: 'Con el tiempo he acabado inclinándome por la IA y las redes neuronales.' },
+    {
+      type: 'p',
+      text: 'Amante de la cultura japonesa y su idioma, llegando a estudiar el idioma hasta proficiencia en entornos profesionales.',
+    },
+    { type: 'h', text: 'Experiencia en Japón' },
+    {
+      type: 'p',
+      text: 'Durante un año tuve el honor de poder estudiar en Japón como estudiante de intercambio en la Ritsumeikan University, donde pude desarrollarme en el idioma y en la inteligencia artificial.',
+    },
+    { type: 'p', text: 'Por supuesto, también pude disfrutar de la cultura del entretenimiento que ofrece Japón.' },
+    { type: 'img', src: SENDAI_IMG, alt: 'Estación de Sendai' },
+    {
+      type: 'p',
+      text: 'Por otro lado, tras cursar asignaturas de japonés en el propio Japón, pude elevar mi nivel de dominio sobre el idioma a nivel avanzado. Dichas asignaturas reforzaron mi inmersión y entendimiento sobre el idioma y su gente.',
+    },
+  ],
+  skills: [
+    { icon: 'ri:code-s-slash-line', title: 'Lenguajes', items: ['C++', 'C#', 'JavaScript / TypeScript', 'Java', 'GLSL'] },
+    { icon: 'ri:gamepad-line', title: 'Motores y Gráficos', items: ['Unity', 'OpenGL', 'Renderizado 3D'] },
+    {
+      icon: 'ri:brain-line',
+      title: 'IA y Optimización',
+      items: ['Redes neuronales', 'IA explicable (SHAP, LRP)', 'Metaheurísticas', 'Algoritmos genéticos'],
+    },
+    { icon: 'ri:global-line', title: 'Web', items: ['React', 'TensorFlow.js'] },
+    { icon: 'ri:tools-line', title: 'Herramientas', items: ['Git', 'Linux', 'Visual Studio', 'VS Code'] },
+    {
+      icon: 'ri:translate-2',
+      title: 'Idiomas',
+      items: ['Español (nativo)', 'Inglés (C1 Cambridge)', 'Japonés avanzado (JLPT N2 en dic. 2026)'],
+    },
+  ],
+  experience: [
+    {
+      period: '2024 – 2025',
+      title: 'Profesor de inglés y español',
+      org: 'Academia de idiomas · Osaka, Japón',
+      description: 'Clases a alumnado japonés impartidas íntegramente en japonés, compaginadas con el intercambio.',
+      icon: 'ri:presentation-line',
+    },
+    {
+      period: 'Verano 2023',
+      title: 'Dependiente',
+      org: 'El Corte Inglés',
+      description: 'Atención al cliente durante la campaña de verano, también en inglés.',
+      icon: 'ri:store-2-line',
+    },
+  ],
+  education: [
+    {
+      period: '2021 – 2026',
+      title: 'Grado en Ingeniería Informática',
+      org: 'Universidad de Jaén',
+      description: 'Graduado en 2026. TFG: plataforma de IA explicable para Nets4Learning (grupo SIMIDAT).',
+      icon: 'ri:graduation-cap-line',
+    },
+    {
+      period: '2024 – 2025',
+      title: 'Intercambio académico',
+      org: 'Ritsumeikan University · Osaka, Japón',
+      description: 'Inteligencia artificial y japonés avanzado.',
+      icon: 'ri:global-line',
+    },
+  ],
+};

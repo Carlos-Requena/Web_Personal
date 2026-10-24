@@ -4,19 +4,22 @@ link: plant-flow-optimization
 catalog: true
 date: 2026-02-25
 description: Implementation and analysis of Greedy, Local Search, Tabu Search, and Multistart algorithms to solve the Quadratic Assignment Problem (QAP) in an assembly line.
-cover: /img/cover/7.webp
+cover: /img/cover/6.webp
 tags:
-  - C++
-  - Artificial Intelligence
-  - Optimization
-  - Metaheuristics
-  - Greedy Algorithm
-  - Tabu Search
-  - QAP
-  - University Project
+  - "C++"
+  - "Metaheuristics"
+  - "Optimization"
 categories:
   - Projects
 sticky: false
+order: 6
+projectType: "University project"
+stack:
+  - "C++"
+  - "Greedy"
+  - "Local search"
+  - "Tabu search"
+noAi: true
 ---
 
 This project addresses the optimization problem of an assembly line for a factory (based on a FORD case study), seeking the optimal distribution of departments to minimize the cost of material flow. Developed by **Carlos Requena Doña** and **Yessin Mohamed** as part of Practice 1 of the Metaheuristics course.

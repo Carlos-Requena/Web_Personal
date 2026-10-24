@@ -50,6 +50,20 @@ const blogCollection = defineCollection({
     math: z.boolean().optional(),
     quiz: z.boolean().optional(),
     password: z.string().optional(),
+    // Portfolio project fields
+    order: z.number().optional(),
+    projectType: z.string().optional(),
+    role: z.string().optional(),
+    stack: z.array(z.string()).optional(),
+    links: z
+      .object({
+        demo: z.string().optional(),
+        code: z.string().optional(),
+        video: z.string().optional(),
+        pdf: z.string().optional(),
+      })
+      .optional(),
+    noAi: z.boolean().optional(),
   }) satisfies z.ZodType<BlogSchema, z.ZodTypeDef, BlogSchemaInput>,
 });
 

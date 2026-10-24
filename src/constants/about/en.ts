@@ -1,0 +1,117 @@
+import { NAME, SENDAI_IMG, STACK } from './shared';
+import type { AboutContent } from './types';
+
+export const en: AboutContent = {
+  title: 'About Me',
+  coverTitle: 'About Me',
+  name: NAME,
+  jobTitle: 'Computer Engineer',
+  kicker: 'Computer Engineer · University of Jaén, 2026',
+  role: 'Artificial intelligence, 3D graphics and video games',
+  tagline:
+    'I build with C++, Unity and OpenGL, and my bachelor’s thesis brought explainable AI to the browser with React and TensorFlow.js.',
+  badges: {
+    availability: 'Available to start immediately',
+    languages: 'Spanish · English C1 · Advanced Japanese',
+    location: 'Estepona (Málaga), Spain',
+  },
+  stack: STACK,
+  labels: {
+    skills: 'Skills',
+    education: 'Education',
+    experience: 'Experience',
+    career: 'Experience & education',
+    contact: 'Contact',
+    downloadCv: 'Download CV',
+    viewProjects: 'See projects',
+    aboutMe: 'About me',
+    projects: 'Projects',
+    allProjects: 'See all {count} projects',
+    featured: 'Bachelor’s thesis',
+    demo: 'Live demo',
+    code: 'Code',
+    video: 'Video',
+    pdf: 'Thesis (PDF)',
+    viewProject: 'View project',
+    noAiNote: 'All of them are university projects, coded by me without AI assistants.',
+    contactTitle: 'Let’s talk',
+    contactText: 'Write to me at {email} or find me on LinkedIn and GitHub.',
+    facts: {
+      title: 'Project facts',
+      type: 'Type',
+      role: 'My role',
+      stack: 'Tech',
+      links: 'Links',
+      development: 'Development',
+      noAi: 'Own code, no AI assistants',
+    },
+  },
+  cvHref: '/cv/Carlos_Requena_CV_EN.pdf',
+  cvFileName: 'Carlos_Requena_CV.pdf',
+  narrative: [
+    {
+      type: 'p',
+      text: 'I am a software developer passionate about creating video games and graphics engines. I specialize in C++, Unity, and OpenGL.',
+    },
+    { type: 'p', text: "Over time, I've found myself leaning towards AI and neural networks." },
+    {
+      type: 'p',
+      text: "I'm a lover of Japanese culture and its language, having studied the language to a professional proficiency level.",
+    },
+    { type: 'h', text: 'Experience in Japan' },
+    {
+      type: 'p',
+      text: 'For a year, I had the honor of studying in Japan as an exchange student at Ritsumeikan University, where I was able to develop my skills in the language and artificial intelligence.',
+    },
+    { type: 'p', text: 'Of course, I was also able to enjoy the entertainment culture that Japan offers.' },
+    { type: 'img', src: SENDAI_IMG, alt: 'Sendai Station' },
+  ],
+  skills: [
+    { icon: 'ri:code-s-slash-line', title: 'Languages', items: ['C++', 'C#', 'JavaScript / TypeScript', 'Java', 'GLSL'] },
+    { icon: 'ri:gamepad-line', title: 'Engines & Graphics', items: ['Unity', 'OpenGL', '3D Rendering'] },
+    {
+      icon: 'ri:brain-line',
+      title: 'AI & Optimization',
+      items: ['Neural networks', 'Explainable AI (SHAP, LRP)', 'Metaheuristics', 'Genetic algorithms'],
+    },
+    { icon: 'ri:global-line', title: 'Web', items: ['React', 'TensorFlow.js'] },
+    { icon: 'ri:tools-line', title: 'Tools', items: ['Git', 'Linux', 'Visual Studio', 'VS Code'] },
+    {
+      icon: 'ri:translate-2',
+      title: 'Spoken languages',
+      items: ['Spanish (native)', 'English (C1 Cambridge)', 'Advanced Japanese (JLPT N2 in Dec 2026)'],
+    },
+  ],
+  experience: [
+    {
+      period: '2024 – 2025',
+      title: 'English and Spanish teacher',
+      org: 'Language school · Osaka, Japan',
+      description: 'Taught Japanese students entirely in Japanese, alongside the exchange programme.',
+      icon: 'ri:presentation-line',
+    },
+    {
+      period: 'Summer 2023',
+      title: 'Sales assistant',
+      org: 'El Corte Inglés',
+      description: 'Customer service during the summer season, including foreign customers in English.',
+      icon: 'ri:store-2-line',
+    },
+  ],
+  education: [
+    {
+      period: '2021 – 2026',
+      title: "Bachelor's in Computer Engineering",
+      org: 'University of Jaén',
+      description: 'Graduated in 2026. Thesis: explainable AI platform for Nets4Learning (SIMIDAT group).',
+      icon: 'ri:graduation-cap-line',
+    },
+    {
+      period: '2024 – 2025',
+      title: 'Exchange student',
+      org: 'Ritsumeikan University · Osaka, Japan',
+      description: 'Artificial intelligence and advanced Japanese.',
+      icon: 'ri:global-line',
+    },
+  ],
+};

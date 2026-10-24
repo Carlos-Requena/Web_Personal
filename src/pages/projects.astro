@@ -1,0 +1,22 @@
+---
+import ProjectsSection from '@components/projects/ProjectsSection.astro';
+import { getAboutContent } from '@constants/about';
+import { PAGE_CONTAINER } from '@constants/layout';
+import { siteConfig } from '@constants/site-config';
+import Layout from '@layouts/Layout.astro';
+import TwoColumnLayout from '@layouts/TwoColumnLayout.astro';
+import { getProjects } from '@lib/content';
+import { getLocaleFromUrl } from '@/i18n';
+
+const locale = getLocaleFromUrl(Astro.url.pathname);
+const projects = await getProjects(locale);
+const { labels, jobTitle } = getAboutContent(locale);
+---
+
+<Layout title={`${labels.projects} | ${siteConfig.title} · ${jobTitle}`} solidHeader>
+  <TwoColumnLayout>
+    <div class={PAGE_CONTAINER}>
+      <ProjectsSection projects={projects} locale={locale} heading="h1" />
+    </div>
+  </TwoColumnLayout>
+</Layout>

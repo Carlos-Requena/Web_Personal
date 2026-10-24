@@ -13,16 +13,18 @@ import Navigator from './Navigator';
 interface Props {
   isPostPage?: boolean;
   tocNumbering?: boolean;
+  /** Keep the header background visible at the top (pages without a cover) */
+  solid?: boolean;
 }
 
-const { isPostPage = false, tocNumbering = true } = Astro.props;
+const { isPostPage = false, tocNumbering = true, solid = false } = Astro.props;
 const { alternate, title, showLogo } = siteConfig;
 const locale = getLocaleFromUrl(Astro.url.pathname);
 ---
 
 <div
   id="site-header"
-  class={`shadow-text fixed tablet:backdrop-blur inset-x-0 top-0 z-30 gap-4 py-2.5 text-white select-none tablet:py-2 tablet:pl-3 tablet:pr-0 overflow-visible`}
+  class={`shadow-text fixed tablet:backdrop-blur inset-x-0 top-0 z-30 gap-4 py-2.5 text-white select-none tablet:py-2 tablet:pl-3 tablet:pr-0 overflow-visible ${solid ? 'with-background' : ''}`}
   transition:name="site-header"
 >
   <div class={`mx-auto flex items-center justify-between tablet:w-full px-6 tablet:pl-10 tablet:pr-3 ${MAX_WIDTH.content}`}>
@@ -52,7 +54,7 @@ const locale = getLocaleFromUrl(Astro.url.pathname);
         logoSrc={siteConfig.avatar}
       />
     </div>
-    <Navigator client:load currentPath={Astro.url.pathname} locale={locale} />
+    <Navigator client:load currentPath={Astro.url.pathname} locale={locale} solid={solid} />
   </div>
   {christmasConfig.enabled && christmasConfig.features.christmasCoverDecoration && <ChristmasLights />}
   {christmasConfig.enabled && <ChristmasOrnamentToggle client:only="react" />}

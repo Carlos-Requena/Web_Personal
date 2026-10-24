@@ -14,7 +14,7 @@ export const uiStrings: UIStrings = {
   'nav.categories': 'カテゴリー',
   'nav.tags': 'タグ',
   'nav.archives': 'アーカイブ',
-  'nav.about': 'ブログについて',
+  'nav.about': '私について',
 
   // ── Common ──────────────────────────────────────────────────
   'common.search': '検索',
@@ -41,12 +41,13 @@ export const uiStrings: UIStrings = {
   'post.featuredCategories': 'おすすめのカテゴリー',
   'post.yearPosts': '{count}件の投稿',
   'post.readingTime': '{time}分で読み終えます',
+  'post.readingMinutes': '{time}分',
   'post.wordCount': '{count}文字',
   'post.publishedAt': '公開日: {date}',
   'post.updatedAt': '更新日: {date}',
   'post.prevPost': '前へ',
   'post.nextPost': '次へ',
-  'post.relatedPosts': '関連した記事',
+  'post.relatedPosts': '関連プロジェクト',
   'post.seriesNavigation': 'シリーズナビゲーション',
   'post.seriesPrev': '前へ',
   'post.seriesNext': '次へ',
@@ -141,6 +142,7 @@ export const uiStrings: UIStrings = {
 
   // ── Footer ──────────────────────────────────────────────────
   'footer.poweredBy': 'Powered by {name}',
+  'footer.theme': 'テーマ',
   'footer.totalPosts': '{count}件の投稿',
   'footer.totalWords': '{count}文字',
   'footer.totalWordsTitle': '合計の文字数',
@@ -256,7 +258,7 @@ export const uiStrings: UIStrings = {
   'summary.auto': '概要',
 
   // ── Random Posts ────────────────────────────────────────────
-  'post.randomPosts': '投稿をランダムに表示',
+  'post.randomPosts': 'その他のプロジェクト',
 
   // ── Tag Component ───────────────────────────────────────────
   'tag.expandAll': 'すべて表示',

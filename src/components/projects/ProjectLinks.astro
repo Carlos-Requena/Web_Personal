@@ -1,0 +1,55 @@
+---
+/**
+ * External links of a project (demo, code, video, PDF).
+ * `buttons` renders pill buttons; `text` renders compact text links for cards.
+ */
+import type { AboutLabels } from '@constants/about';
+import { withBase } from '@constants/site-config';
+import { cn } from '@lib/utils';
+import { Icon } from 'astro-icon/components';
+import type { ProjectLinks } from 'types/blog';
+
+interface Props {
+  links?: ProjectLinks;
+  labels: AboutLabels;
+  variant?: 'buttons' | 'text';
+  class?: string;
+}
+
+const { links = {}, labels, variant = 'text', class: className } = Astro.props;
+
+const items = [
+  { key: 'demo', href: links.demo, label: labels.demo, icon: 'ri:external-link-line' },
+  { key: 'pdf', href: links.pdf, label: labels.pdf, icon: 'ri:file-pdf-2-line' },
+  { key: 'code', href: links.code, label: labels.code, icon: 'ri:github-fill' },
+  { key: 'video', href: links.video, label: labels.video, icon: 'ri:video-line' },
+]
+  .filter((item): item is typeof item & { href: string } => Boolean(item.href))
+  .map((item) => ({ ...item, href: item.href.startsWith('/') ? withBase(item.href) : item.href }));
+---
+
+{
+  items.length > 0 && (
+    <ul class={cn('flex flex-wrap items-center', variant === 'buttons' ? 'gap-2' : 'gap-x-4 gap-y-1', className)}>
+      {items.map((item, index) => (
+        <li>
+          <a
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class={cn(
+              'inline-flex items-center gap-1.5 text-sm font-medium transition-colors duration-200',
+              variant === 'text' && 'text-primary hover:underline',
+              variant === 'buttons' && 'rounded-full border px-4 py-2',
+              variant === 'buttons' && index === 0 && 'bg-primary text-primary-foreground border-primary hover:opacity-90',
+              variant === 'buttons' && index > 0 && 'border-border bg-card hover:border-primary hover:text-primary',
+            )}
+          >
+            <Icon name={item.icon} class="size-4" />
+            {item.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  )
+}

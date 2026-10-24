@@ -6,15 +6,20 @@ date: 2026-02-24 00:00:00
 description: A Roguelike video game developed in Unity featuring Context Steering AI, procedural dungeon generation, Object Pooling system, and Chibi character design.
 cover: /img/cover/1.webp
 tags:
-  - Unity
-  - C#
-  - Game Development
-  - Artificial Intelligence
-  - Roguelike
-  - Scriptable Objects
+  - "Unity"
+  - "C#"
+  - "Game Development"
+  - "Artificial Intelligence"
 categories:
   - Projects
 sticky: false
+order: 3
+projectType: "University project"
+stack:
+  - "Unity"
+  - "C#"
+  - "Context Steering"
+noAi: true
 ---
 
 Roguelike Chibi is a roguelike video game developed in Unity. The game features procedurally generated dungeons, characters and enemies with a Chibi aesthetic, an AI system based on Context Steering, and a modular architecture focused on object reuse and separation of concerns.
@@ -65,7 +70,7 @@ This pattern reduces Garbage Collector impact and stabilizes performance during 
 
 Interactable elements follow a hierarchy based on interfaces and inheritance:
 
-```
+```plain
 IInteractableElement
 ├── Item
 │   ├── Weapon        ← Collision object vector, self-damage logic

@@ -4,18 +4,21 @@ link: tsp-evolutionary-optimization
 catalog: true
 date: 2026-02-25
 description: 巡回セールスマン問題（TSP）に対する遺伝的アルゴリズムと差分進化アルゴリズムの実装と分析。OX2とMOC交叉演算子の比較を含みます。
-cover: /img/cover/6.webp
+cover: /img/cover/7.webp
 tags:
-  - C++
-  - Artificial Intelligence
-  - Genetic Algorithms
-  - Optimization
-  - Metaheuristics
-  - TSP
-  - University Project
+  - "C++"
+  - "メタヒューリスティクス"
+  - "最適化"
 categories:
   - プロジェクト
 sticky: false
+order: 5
+projectType: "メタヒューリスティクスの授業課題"
+stack:
+  - "C++"
+  - "遺伝的アルゴリズム"
+  - "差分進化"
+noAi: true
 ---
 
 このプロジェクトは、**巡回セールスマン問題 (TSP)** を解決するためのメタヒューリスティクスアルゴリズムの実装と実験的分析を文書化したものです。これは、**Carlos Requena Doña** と **Yessin Mohamed** によって大学の実習の一環として開発されました。
@@ -24,7 +27,7 @@ sticky: false
 
 ## 🧠 アルゴリズムと問題
 
-この問題は、一連の都市を正確に1回ずつ訪問し、出発点に戻る最短ルートを見つけることです。地点間の距離はユークリッド距離の公式を使用して計算されます。
+この問題は、一連の都市を正確に1 回ずつ訪問し、出発点に戻る最短ルートを見つけることです。地点間の距離はユークリッド距離の公式を使用して計算されます。
 
 プロジェクトでは主に2つのタイプのアルゴリズムを実装しています：
 1.  **遺伝的アルゴリズム（世代交代モデル）**: 個体（ルート）の集団を用いて自然進化をシミュレートします。

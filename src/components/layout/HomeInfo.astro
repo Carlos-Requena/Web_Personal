@@ -1,11 +1,12 @@
 ---
 import ChristmasHat from '@components/christmas/ChristmasHat.astro';
 import ButtonLink from '@components/control/ButtonLink.astro';
+import { getAboutContent } from '@constants/about';
 import type { HomeSiderType } from '@constants/enum';
 import { RESERVED_ROUTES, routers } from '@constants/router';
 import { christmasConfig, configuredSeriesSlugs, enabledSeriesSlugs, siteConfig, withBase } from '@constants/site-config';
-import { getAllTags, getCategoryList, getPostCount, getSortedPosts } from '@lib/content';
 import { getLqipStyle } from '@lib/lqip';
+import { getActiveNavPath } from '@lib/route';
 import { cn, filterNavItems } from '@lib/utils';
 import { Icon } from 'astro-icon/components';
 import { getLocaleFromUrl, localizedPath, resolveNavName, stripLocaleFromPath, t } from '@/i18n';
@@ -20,20 +21,13 @@ interface Props {
 }
 
 const locale = getLocaleFromUrl(Astro.url.pathname);
-const postCount = await getPostCount(locale);
-const { countMap } = await getCategoryList(locale);
-const posts = await getSortedPosts(locale);
-const tags = getAllTags(posts);
-
-const allTags = Object.entries(tags).map(([tag, count]) => ({ tag, count }));
-
 // 生成唯一 ID 前缀
 const uniqueId = `home-info-${Math.random().toString(36).substring(2, 11)}`;
 const { className } = Astro.props;
 
 // Filter navigation items to exclude disabled series
 const filteredRouters = filterNavItems(routers, configuredSeriesSlugs, enabledSeriesSlugs, RESERVED_ROUTES);
-const strippedPath = stripLocaleFromPath(Astro.url.pathname);
+const strippedPath = getActiveNavPath(stripLocaleFromPath(Astro.url.pathname));
 ---
 
 <div class={cn('flex flex-col items-center', className)} data-home-info-container={uniqueId}>
@@ -50,28 +44,8 @@ const strippedPath = stripLocaleFromPath(Astro.url.pathname);
   </div>
 
   <p class="mt-2">{siteConfig?.name}</p>
-  <p class="text-muted-foreground mt-3 text-center">{siteConfig?.description}</p>
+  <p class="text-muted-foreground mt-3 px-4 text-center text-pretty">{getAboutContent(locale).role}</p>
   <Social />
-  <div
-    class="text-muted-foreground mt-3 flex justify-center text-center text-sm/4 whitespace-nowrap select-none dark:text-white/80"
-  >
-    <a href={localizedPath('/', locale)} class="hover:text-blue flex cursor-pointer flex-col gap-2 p-1 transition">
-      <span class="text-lg/5 font-bold">{postCount}</span>
-      {t(locale, 'homeInfo.articles')}
-    </a>
-    <div class="bg-muted-foreground mx-3 w-px"></div>
-    <a href={localizedPath('/categories', locale)} aria-label={t(locale, 'homeInfo.categories')} class="hover:text-blue">
-      <p class="flex cursor-pointer flex-col gap-2 p-1 transition">
-        <span class="text-lg/5 font-bold">{Object.keys(countMap).length}</span>
-        {t(locale, 'homeInfo.categories')}
-      </p>
-    </a>
-    <div class="bg-muted-foreground mx-3 w-px"></div>
-    <a href={localizedPath('/tags', locale)} class="hover:text-blue flex cursor-pointer flex-col gap-2 p-1 transition">
-      <span class="text-lg/5 font-bold">{allTags?.length ?? 0}</span>
-      {t(locale, 'homeInfo.tags')}
-    </a>
-  </div>
   <div class="mt-6 flex w-full flex-col items-center gap-2.5">
     {
       filteredRouters.map((item, index) => {

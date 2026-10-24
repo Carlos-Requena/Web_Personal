@@ -4,18 +4,21 @@ link: tsp-evolutionary-optimization
 catalog: true
 date: 2026-02-25
 description: Implementación y análisis de algoritmos Genéticos y Evolutivos Diferenciales para el Problema del Viajante de Comercio (TSP), comparando operadores OX2 y MOC.
-cover: /img/cover/6.webp
+cover: /img/cover/7.webp
 tags:
-  - C++
-  - Inteligencia Artificial
-  - Algoritmos Genéticos
-  - Optimización
-  - Metaheurísticas
-  - TSP
-  - Proyecto Universitario
+  - "C++"
+  - "Metaheurísticas"
+  - "Optimización"
 categories:
   - Proyectos
 sticky: false
+order: 5
+projectType: "Asignatura de Metaheurísticas"
+stack:
+  - "C++"
+  - "Algoritmos genéticos"
+  - "Evolución diferencial"
+noAi: true
 ---
 
 Este proyecto documenta la implementación y análisis experimental de algoritmos metaheurísticos para resolver el **Problema del Viajante de Comercio (TSP)**. Fue desarrollado por **Carlos Requena Doña** y **Yessin Mohamed** como parte de una práctica universitaria.

@@ -28,3 +28,14 @@ export function routeBuilder<T extends Routes>(route: T, param: RouteParams<type
 }
 
 export const showDirRoutes = [Routes.Post];
+
+/**
+ * Path used to highlight the active navigation item.
+ * Trailing slashes are ignored, and project pages belong to "/projects".
+ * @param strippedPath pathname without base or locale prefix
+ */
+export function getActiveNavPath(strippedPath: string): string {
+  const path = strippedPath.length > 1 ? strippedPath.replace(/\/+$/, '') : strippedPath;
+  if (path.startsWith('/post/') || path.startsWith('/categories/projects')) return '/projects';
+  return path;
+}

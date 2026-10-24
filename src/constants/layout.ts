@@ -18,6 +18,13 @@ export const CONTENT_PADDING = {
 } as const;
 
 /**
+ * Container for portfolio pages without a cover banner (home, projects, about).
+ * The top padding leaves room for the fixed header.
+ */
+export const PAGE_CONTAINER =
+  'mx-auto flex w-full max-w-6xl flex-col gap-16 px-8 pt-28 pb-4 tablet:px-6 md:gap-12 md:px-4 md:pt-20';
+
+/**
  * Max width constraints
  */
 export const MAX_WIDTH = {

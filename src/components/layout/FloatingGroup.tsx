@@ -80,7 +80,7 @@ export default function FloatingGroup() {
 
   return (
     <motion.div
-      className="fixed right-4 bottom-4 z-50 flex flex-col gap-2 text-primary"
+      className="fixed right-4 bottom-4 z-50 flex tablet:hidden flex-col gap-2 text-primary"
       animate={{
         x: isHidden ? 200 : 0,
         opacity: isHidden ? 0 : 1,

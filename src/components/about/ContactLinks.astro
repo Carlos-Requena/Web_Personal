@@ -1,0 +1,57 @@
+---
+/**
+ * CV download button + social links (GitHub, LinkedIn, email).
+ */
+import { getAboutContent } from '@constants/about';
+import { socialConfig, withBase } from '@constants/site-config';
+import { cn } from '@lib/utils';
+import { Icon } from 'astro-icon/components';
+import { getLocaleFromUrl, localizedPath } from '@/i18n';
+
+interface Props {
+  showProjects?: boolean;
+  class?: string;
+}
+
+const { showProjects = false, class: className } = Astro.props;
+const locale = getLocaleFromUrl(Astro.url.pathname);
+const data = getAboutContent(locale);
+
+const socialLabels: Record<string, string> = { github: 'GitHub', linkedin: 'LinkedIn', email: 'Email' };
+const contacts = Object.entries(socialConfig).map(([key, cfg]) => ({
+  key,
+  label: socialLabels[key] ?? key,
+  icon: cfg.icon,
+  url: cfg.url,
+}));
+
+const pill =
+  'border-border bg-card hover:border-primary hover:text-primary inline-flex items-center gap-1.5 rounded-full border px-4 py-2 text-sm font-medium transition-colors duration-200';
+---
+
+<div class={cn('flex flex-wrap items-center gap-2', className)}>
+  <a
+    href={withBase(data.cvHref)}
+    download={data.cvFileName}
+    class="bg-primary text-primary-foreground inline-flex items-center gap-1.5 rounded-full px-5 py-2 text-sm font-semibold shadow-sm transition-transform duration-200 hover:scale-105"
+  >
+    <Icon name="ri:download-2-line" class="size-4" />
+    {data.labels.downloadCv}
+  </a>
+  {
+    showProjects && (
+      <a href={localizedPath('/projects', locale)} class={pill}>
+        <Icon name="ri:function-fill" class="size-4" />
+        {data.labels.viewProjects}
+      </a>
+    )
+  }
+  {
+    contacts.map((c) => (
+      <a href={c.url} target={c.key === 'email' ? undefined : '_blank'} rel="noopener noreferrer" class={pill}>
+        <Icon name={c.icon} class="size-4" />
+        {c.label}
+      </a>
+    ))
+  }
+</div>

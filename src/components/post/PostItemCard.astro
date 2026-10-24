@@ -42,6 +42,8 @@ const locale = getLocaleFromUrl(Astro.url.pathname);
 const finalCover = withBase(cover ?? randomCover ?? defaultCoverList[0]);
 const href = localizedPath(routeBuilder(Routes.Post, { slug, link, title }), locale);
 const isDraft = import.meta.env.DEV && draft === true;
+// reading-time returns English text ("6 min read"): keep the number, localize the unit
+const readingMinutes = t(locale, 'post.readingMinutes', { time: Number.parseInt(readingTime ?? '1', 10) || 1 });
 const isFallback = postLocale != null && locale !== defaultLocale && postLocale !== locale;
 
 const categoryArr = getCategoryArr(categories?.[0]);
@@ -133,11 +135,11 @@ function getStaggerPadding(rowIndex: number): string {
         </p>
         <button
           class="flex-center gap-1 md:hidden"
-          title={t(locale, 'post.readingTimeTooltip', { time: readingTime })}
+          title={t(locale, 'post.readingTimeTooltip', { time: readingMinutes })}
           data-tooltip-placement="top"
         >
           <Icon name="fa6-solid:clock" />
-          {readingTime}
+          {readingMinutes}
         </button>
       </div>
     </div>
@@ -219,7 +221,7 @@ function getStaggerPadding(rowIndex: number): string {
           'md:rounded-ss-2xl md:rounded-se-none md:rounded-ee-2xl md:rounded-es-none md:hover:translate-x-1',
         )}
       >
-        more...
+        {t(locale, 'post.readMore')}
       </Button>
     </a>
   </div>

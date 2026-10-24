@@ -1,0 +1,51 @@
+---
+/**
+ * Project listing: the featured project (TFG) on top, then a card grid.
+ * Used by the home page (limited, with a link to all) and the projects page.
+ */
+import { fillLabel, getAboutContent } from '@constants/about';
+import { splitFeatured } from '@lib/content';
+import { Icon } from 'astro-icon/components';
+import type { BlogPost } from 'types/blog';
+import { localizedPath } from '@/i18n';
+import FeaturedProject from './FeaturedProject.astro';
+import ProjectCard from './ProjectCard.astro';
+
+interface Props {
+  projects: BlogPost[];
+  locale: string;
+  /** Max number of non-featured projects to show */
+  limit?: number;
+  heading?: 'h1' | 'h2';
+}
+
+const { projects, locale, limit, heading = 'h2' } = Astro.props;
+const { labels } = getAboutContent(locale);
+const { featured, others } = splitFeatured(projects);
+const shown = limit ? others.slice(0, limit) : others;
+const hasMore = shown.length < others.length;
+const Heading = heading;
+---
+
+<section class="flex flex-col gap-6" id="projects">
+  <div class="flex items-end justify-between gap-4 md:flex-col md:items-start">
+    <div class="flex flex-col gap-1">
+      <Heading class={heading === 'h1' ? 'text-4xl font-bold md:text-3xl' : 'text-2xl font-bold'}>{labels.projects}</Heading>
+      <p class="text-muted-foreground flex items-start gap-1.5 text-sm">
+        <Icon name="ri:code-s-slash-line" class="mt-0.5 size-4 shrink-0" />
+        {labels.noAiNote}
+      </p>
+    </div>
+    {
+      hasMore && (
+        <a href={localizedPath('/projects', locale)} class="text-primary shrink-0 text-sm font-semibold hover:underline">
+          {fillLabel(labels.allProjects, { count: projects.length })} →
+        </a>
+      )
+    }
+  </div>
+  {featured && <FeaturedProject post={featured} locale={locale} labels={labels} />}
+  <div class="grid grid-cols-3 gap-6 tablet:grid-cols-2 md:grid-cols-1">
+    {shown.map((post) => <ProjectCard post={post} locale={locale} labels={labels} />)}
+  </div>
+</section>
