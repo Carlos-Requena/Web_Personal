@@ -25,15 +25,15 @@ const badges = [
     height="176"
     class="size-44 shrink-0 rounded-full border-4 border-white/30 object-cover shadow-lg md:size-28"
   />
-  <div class="flex min-w-0 flex-col gap-3 md:items-center">
+  <div class="flex min-w-0 flex-col gap-3 [text-shadow:0_1px_3px_rgb(0_0_0/0.6)] md:items-center">
     <p class="text-sm font-semibold tracking-wider text-primary uppercase md:text-xs">{data.kicker}</p>
     <h1 class="text-5xl font-bold tracking-tight text-white md:text-3xl">{data.name}</h1>
     <p class="text-xl font-semibold text-white md:text-lg">{data.role}</p>
-    <p class="max-w-2xl text-pretty text-white/80">{data.tagline}</p>
+    <p class="max-w-2xl text-pretty text-white/90">{data.tagline}</p>
     <ul class="flex flex-wrap gap-2 md:flex-col md:items-center">
       {
         badges.map((badge) => (
-          <li class="inline-flex items-center gap-2 rounded-lg border border-white/25 bg-black/25 px-3 py-1.5 text-sm text-white backdrop-blur-sm">
+          <li class="inline-flex items-center gap-2 rounded-lg border border-white/25 bg-black/45 px-3 py-1.5 text-sm text-white backdrop-blur-sm">
             <Icon name={badge.icon} class={badge.accent ? 'size-2.5 text-green-400' : 'size-4 text-white/70'} />
             {badge.text}
           </li>
