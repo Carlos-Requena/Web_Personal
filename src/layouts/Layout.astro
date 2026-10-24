@@ -9,8 +9,8 @@ interface Props {
   post?: BlogPost;
   /** Override canonical URL (e.g., for fallback pages pointing to default-locale version) */
   canonical?: string;
-  /** Pages without a cover banner: keep the header background visible at the top */
-  solidHeader?: boolean;
+  /** Scroll distance (px) after which the header gets its background; default 45% of the viewport */
+  headerTriggerPx?: number;
 }
 
 import { ClientRouter } from 'astro:transitions';
@@ -50,7 +50,7 @@ const {
   siderType,
   post,
   canonical: canonicalOverride,
-  solidHeader = false,
+  headerTriggerPx,
 } = Astro.props;
 // TODO: siderType should be custom in router file, not in layout
 
@@ -331,7 +331,7 @@ const canonicalHref = canonicalOverride ?? Astro.url.href;
   <body>
     <ChristmasEffects transition:persist="christmas-snowfall" />
     <div class="flex min-h-screen flex-col text-black dark:text-white">
-      <Header isPostPage={isPostPage} tocNumbering={post?.data.tocNumbering ?? true} solid={solidHeader} />
+      <Header isPostPage={isPostPage} tocNumbering={post?.data.tocNumbering ?? true} headerTriggerPx={headerTriggerPx} />
       <main class="relative flex grow flex-col gap-4">
         {(<slot />)}
       </main>

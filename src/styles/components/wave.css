@@ -5,6 +5,11 @@
   max-height: 9.375rem;
   position: absolute;
   bottom: 0px;
+  /* Shorter waves for the compact page banner */
+  &.wave-compact {
+    height: 5.5rem;
+    min-height: 0;
+  }
   .wave {
     display: block;
     width: 100%;

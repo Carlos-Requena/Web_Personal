@@ -1,6 +1,12 @@
-export default function WaveSvg() {
+import { cn } from '@lib/utils';
+
+interface WaveSvgProps {
+  className?: string;
+}
+
+export default function WaveSvg({ className }: WaveSvgProps) {
   return (
-    <div className="wave-wrap">
+    <div className={cn('wave-wrap', className)}>
       <svg
         className="wave"
         xmlns="http://www.w3.org/2000/svg"

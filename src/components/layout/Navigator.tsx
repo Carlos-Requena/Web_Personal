@@ -22,8 +22,8 @@ import { SearchTrigger } from './SearchDialog';
 interface NavigatorProps {
   currentPath: string;
   locale?: string;
-  /** Keep the header background visible at the top (pages without a cover) */
-  solid?: boolean;
+  /** Scroll distance (px) after which the header gets its background; default 45% of the viewport */
+  triggerPx?: number;
 }
 
 // Pre-filter navigation items at module load (config is static)
@@ -59,9 +59,10 @@ function ButtonLink({ url, label, isActive, children }: ButtonLinkProps) {
   );
 }
 
-const Navigator = memo(function Navigator({ currentPath, locale = defaultLocale, solid = false }: NavigatorProps) {
+const Navigator = memo(function Navigator({ currentPath, locale = defaultLocale, triggerPx }: NavigatorProps) {
   const { isBeyond, direction, scrollY } = useScrollTrigger({
-    triggerDistance: 0.45,
+    triggerDistance: triggerPx ?? 0.45,
+    isPixels: triggerPx !== undefined,
     throttleMs: 80,
   });
 
@@ -76,8 +77,8 @@ const Navigator = memo(function Navigator({ currentPath, locale = defaultLocale,
 
   // Apply with-background class based on scroll position
   useEffect(() => {
-    document.getElementById('site-header')?.classList.toggle('with-background', solid || isBeyond);
-  }, [solid, isBeyond]);
+    document.getElementById('site-header')?.classList.toggle('with-background', isBeyond);
+  }, [isBeyond]);
 
   // Handle header visibility based on scroll
   useEffect(() => {

@@ -3,6 +3,7 @@ import CareerSection from '@components/about/CareerSection.astro';
 import ContactCta from '@components/home/ContactCta.astro';
 import HomeHero from '@components/home/HomeHero.astro';
 import ProjectsSection from '@components/projects/ProjectsSection.astro';
+import PageBanner from '@components/ui/cover/PageBanner.astro';
 import { getAboutContent } from '@constants/about';
 import { PAGE_CONTAINER } from '@constants/layout';
 import { siteConfig } from '@constants/site-config';
@@ -16,10 +17,12 @@ const projects = await getProjects(locale);
 const { labels, tagline, jobTitle } = getAboutContent(locale);
 ---
 
-<Layout title={`${siteConfig.title} · ${jobTitle}`} description={tagline} solidHeader>
+<Layout title={`${siteConfig.title} · ${jobTitle}`} description={tagline}>
   <TwoColumnLayout>
-    <div class={PAGE_CONTAINER}>
+    <PageBanner slot="cover">
       <HomeHero />
+    </PageBanner>
+    <div class={PAGE_CONTAINER}>
       <ProjectsSection projects={projects} locale={locale} limit={3} />
       <CareerSection heading={labels.career} />
       <ContactCta />

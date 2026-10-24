@@ -1,5 +1,6 @@
 ---
 import ProjectsSection from '@components/projects/ProjectsSection.astro';
+import PageBanner from '@components/ui/cover/PageBanner.astro';
 import { getAboutContent } from '@constants/about';
 import { PAGE_CONTAINER } from '@constants/layout';
 import { siteConfig } from '@constants/site-config';
@@ -13,8 +14,9 @@ const projects = await getProjects(locale);
 const { labels, jobTitle } = getAboutContent(locale);
 ---
 
-<Layout title={`${labels.projects} | ${siteConfig.title} · ${jobTitle}`} solidHeader>
+<Layout title={`${labels.projects} | ${siteConfig.title} · ${jobTitle}`} headerTriggerPx={140}>
   <TwoColumnLayout>
+    <PageBanner slot="cover" compact />
     <div class={PAGE_CONTAINER}>
       <ProjectsSection projects={projects} locale={locale} heading="h1" />
     </div>
