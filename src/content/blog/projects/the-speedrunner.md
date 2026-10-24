@@ -2,7 +2,7 @@
 title: The Speedrunner
 link: the-speedrunner
 catalog: true
-date: 2026-02-25
+date: 2024-05-14
 description: Un videojuego tipo Speedrun desarrollado en Unity donde el objetivo es completar niveles lo más rápido posible con mecánicas avanzadas de movimiento.
 cover: /img/cover/5.webp
 tags:
@@ -18,6 +18,8 @@ stack:
   - "Unity"
   - "C#"
 noAi: true
+links: 
+  video: https://drive.google.com/file/d/1q3LWy8l2YnIt8GLVLnAXebbRO85_F-wB/view?usp=share_link
 ---
 
 **The Speedrunner** es un videojuego de plataformas en primera persona desarrollado en Unity, enfocado en la velocidad y la precisión. El objetivo principal es completar niveles en el menor tiempo posible, superando récords personales y compitiendo contra otros jugadores.
