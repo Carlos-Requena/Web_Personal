@@ -110,7 +110,8 @@ export const en: AboutContent = {
       period: '2024 – 2025',
       title: 'Exchange student',
       org: 'Ritsumeikan University · Osaka, Japan',
-      description: 'Artificial intelligence and advanced Japanese.',
+      description:
+        'Artificial intelligence and advanced Japanese. Courses taught in English: Pattern Recognition, Distributed Systems, Operating Systems and Applied Informatics. Presented research papers in English on generative AI for games (IEEE CoG 2024) and deep reinforcement learning; in Japanese, on an interview study of young people’s views on work and on gamers in Japan.',
       icon: 'ri:global-line',
     },
   ],

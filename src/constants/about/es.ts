@@ -114,7 +114,8 @@ export const es: AboutContent = {
       period: '2024 – 2025',
       title: 'Intercambio académico',
       org: 'Ritsumeikan University · Osaka, Japón',
-      description: 'Inteligencia artificial y japonés avanzado.',
+      description:
+        'Inteligencia artificial y japonés avanzado. Asignaturas en inglés: Pattern Recognition, Distributed Systems, Operating Systems y Applied Informatics. Presentaciones en inglés de artículos de investigación sobre IA generativa para videojuegos (IEEE CoG 2024) y aprendizaje por refuerzo profundo; en japonés, sobre un estudio por entrevistas de la visión laboral de los jóvenes y sobre los jugadores en Japón.',
       icon: 'ri:global-line',
     },
   ],

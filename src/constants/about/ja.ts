@@ -121,7 +121,8 @@ export const ja: AboutContent = {
       period: '2024 – 2025',
       title: '交換留学',
       org: '立命館大学 · 大阪',
-      description: '人工知能と上級日本語を履修。',
+      description:
+        '人工知能と上級日本語を履修。英語で Pattern Recognition、Distributed Systems、Operating Systems、Applied Informatics を受講。ゲーム向け生成AI（IEEE CoG 2024）と深層強化学習の論文を英語で発表し、日本語では若者の仕事観に関するインタビュー調査と日本のゲーマー事情について発表。',
       icon: 'ri:global-line',
     },
   ],
