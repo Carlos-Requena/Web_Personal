@@ -2,7 +2,7 @@
 title: The Speedrunner
 link: the-speedrunner
 catalog: true
-date: 2026-02-25
+date: 2024-05-14
 description: 高度な移動メカニクスを駆使して、可能な限り速くレベルをクリアすることを目指す、Unityで開発されたスピードラン型ゲーム。
 cover: /img/cover/5.webp
 tags:
@@ -17,6 +17,8 @@ projectType: "大学のプロジェクト"
 stack:
   - "Unity"
   - "C#"
+links:
+  video: https://drive.google.com/file/d/1q3LWy8l2YnIt8GLVLnAXebbRO85_F-wB/view?usp=share_link
 noAi: true
 ---
 

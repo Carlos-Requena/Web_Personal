@@ -31,7 +31,7 @@ Motor de renderizado 3D construido desde cero en C++ sobre OpenGL. Permite carga
 
 ## 🎥 Demo en vídeo
 
-[Ver demostración en Google Drive](https://drive.google.com/file/d/1zrzqGFnW4ZPExZnvLs_mIXGnygYp2qX0/view?usp=sharing)
+[Ver demostración en Google Drive](https://drive.google.com/file/d/1ln3UuS0lW_OjWofK6olYhcgwOLc5uuBI/view?usp=share_link)
 
 ## 🚀 Características Principales
 

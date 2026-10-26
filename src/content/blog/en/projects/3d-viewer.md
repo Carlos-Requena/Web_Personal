@@ -23,7 +23,7 @@ stack:
   - "ImGui"
 links:
   code: https://github.com/Carlos-Requena/3D_Viewer
-  video: https://drive.google.com/file/d/1zrzqGFnW4ZPExZnvLs_mIXGnygYp2qX0/view?usp=sharing
+  video: https://drive.google.com/file/d/1ln3UuS0lW_OjWofK6olYhcgwOLc5uuBI/view?usp=share_link
 noAi: true
 ---
 
@@ -31,7 +31,7 @@ A 3D rendering engine built from scratch in C++ using OpenGL. It allows loading 
 
 ## 🎥 Video Demo
 
-[Watch demonstration on Google Drive](https://drive.google.com/file/d/1zrzqGFnW4ZPExZnvLs_mIXGnygYp2qX0/view?usp=sharing)
+[Watch demonstration on Google Drive](https://drive.google.com/file/d/1ln3UuS0lW_OjWofK6olYhcgwOLc5uuBI/view?usp=share_link)
 
 ## 🚀 Key Features
 

@@ -38,3 +38,9 @@ backups/
 
 # pnpm regenerates this build-approval scaffold on install; it breaks the pnpm-9 CI deploy
 pnpm-workspace.yaml
+
+# Private team docs (not published): guides for Carlos, agents and collaborators
+GUIA.md
+AGENTS.md
+CLAUDE.local.md
+EJECUTAR-EN-LOCAL.md

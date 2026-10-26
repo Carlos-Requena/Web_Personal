@@ -2,7 +2,7 @@
 title: The Speedrunner
 link: the-speedrunner
 catalog: true
-date: 2026-02-25
+date: 2024-05-14
 description: A speedrun-type video game developed in Unity where the goal is to complete levels as quickly as possible with advanced movement mechanics.
 cover: /img/cover/5.webp
 tags:
@@ -17,6 +17,8 @@ projectType: "University project"
 stack:
   - "Unity"
   - "C#"
+links:
+  video: https://drive.google.com/file/d/1q3LWy8l2YnIt8GLVLnAXebbRO85_F-wB/view?usp=share_link
 noAi: true
 ---
 
